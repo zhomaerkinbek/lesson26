@@ -3,11 +3,12 @@ public interface Connection {
     void closeConnection();
     boolean isConnect();
     Record getRecord(int index);
-    boolean isValue(String key);
-    Record getRecord(String key);
+    boolean isRecord(String key);
+    Record getRecord(String key) throws Exception;
     Record[] getRecords(int startIndex, int finishIndex);
     int getCountRecords();
     void setRecord(Record record);
-    void updateRecord(Record record, int index);
-    void updateValue(String key, String value);
+    void updateRecord(int index, String key, String value) throws Exception;
+    void updateValue(String key, String value) throws Exception;
 }
+
